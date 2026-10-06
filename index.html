@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#130b1f">
+<title>For Samer Stephanie 💗</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Inter:wght@400;500;600;700&display=swap');
+
+:root{
+  --bg:#090611; --panel:#151021; --panel2:#1c1429; --pink:#ff7eb6;
+  --rose:#ffb4d3; --gold:#ffd98a; --white:#fff8fc; --muted:#c9bbcb;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:radial-gradient(circle at 50% -10%,#3a183d 0,#120a1b 35%,#07050b 100%);
+  color:var(--white);font-family:Inter,sans-serif;overflow-x:hidden;
+}
+body.locked{overflow:hidden}
+#stars,.hearts{position:fixed;inset:0;pointer-events:none;z-index:0}
+.star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;opacity:.7;animation:twinkle 3s infinite ease-in-out}
+@keyframes twinkle{50%{opacity:.15;transform:scale(.5)}}
+.heart{position:absolute;bottom:-40px;font-size:18px;animation:float 10s linear forwards;opacity:0}
+@keyframes float{10%{opacity:.7}100%{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+
+#lockScreen{
+  position:fixed;inset:0;z-index:100;
+  display:flex;align-items:center;justify-content:center;padding:22px;
+  background:linear-gradient(145deg,#09050f,#1a0d25 55%,#0b0710);
+}
+.lock-card{
+  width:min(430px,100%);text-align:center;padding:38px 28px 32px;
+  background:rgba(24,15,34,.88);border:1px solid rgba(255,180,211,.22);
+  border-radius:28px;box-shadow:0 30px 100px rgba(0,0,0,.55);backdrop-filter:blur(15px);
+}
+.lock-icon{font-size:56px;margin-bottom:14px;filter:drop-shadow(0 0 18px #ff5da7)}
+.script{font-family:"Great Vibes",cursive}
+.lock-card h1{font-family:"Cormorant Garamond",serif;font-size:34px;font-weight:600;margin-bottom:6px}
+.lock-card .hint{color:var(--muted);font-size:14px;line-height:1.7;margin:0 auto 22px}
+#codeInput{
+  width:100%;padding:15px 18px;border-radius:14px;border:1px solid #60415e;
+  background:#0c0812;color:white;text-align:center;font-size:22px;letter-spacing:8px;outline:none;
+}
+#codeInput:focus{border-color:var(--pink);box-shadow:0 0 0 4px rgba(255,126,182,.1)}
+.btn{
+  border:0;border-radius:999px;padding:14px 25px;cursor:pointer;
+  background:linear-gradient(135deg,#ff6fae,#d94c8d);color:white;font-weight:700;
+  box-shadow:0 12px 28px rgba(255,80,150,.2);transition:.25s;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(255,80,150,.3)}
+#unlockBtn{width:100%;margin-top:13px}
+.error{height:22px;margin-top:10px;color:#ff9bbb;font-size:13px}
+.hint-code{color:#8f8193;font-size:11px;margin-top:10px}
+
+main{position:relative;z-index:1}
+.hero{min-height:100vh;display:grid;place-items:center;text-align:center;padding:80px 20px;position:relative}
+.hero-inner{max-width:850px}
+.eyebrow{letter-spacing:5px;text-transform:uppercase;font-size:11px;color:var(--rose);margin-bottom:18px}
+.hero h1{font-family:"Great Vibes",cursive;font-size:clamp(62px,12vw,125px);font-weight:400;line-height:.95;color:#fff;filter:drop-shadow(0 0 22px rgba(255,126,182,.25))}
+.hero h1 span{color:var(--pink)}
+.hero p{font-family:"Cormorant Garamond",serif;font-size:24px;color:#ded0df;line-height:1.55;max-width:650px;margin:28px auto 34px}
+.scroll{display:inline-flex;gap:9px;align-items:center;color:#e9d9e6;text-decoration:none;font-size:12px;letter-spacing:2px;text-transform:uppercase}
+.scroll span{font-size:18px;animation:bounce 1.5s infinite}
+@keyframes bounce{50%{transform:translateY(5px)}}
+
+.section{padding:90px 20px}
+.wrap{width:min(1000px,100%);margin:auto}
+.section-title{text-align:center;font-family:"Cormorant Garamond",serif;font-size:clamp(38px,6vw,58px);font-weight:500}
+.section-title .script{color:var(--pink)}
+.section-sub{text-align:center;color:var(--muted);max-width:650px;margin:10px auto 40px;line-height:1.7}
+
+.envelope-wrap{display:grid;place-items:center;min-height:380px}
+.envelope{
+  position:relative;width:min(560px,90vw);height:310px;cursor:pointer;perspective:1000px;
+}
+.env-back{position:absolute;inset:0;background:#8f365d;border-radius:12px;box-shadow:0 30px 70px rgba(0,0,0,.45)}
+.env-front{position:absolute;inset:0;background:linear-gradient(135deg,#c7527f,#8e315a);clip-path:polygon(0 0,50% 55%,100% 0,100% 100%,0 100%);border-radius:12px}
+.flap{
+  position:absolute;left:0;top:0;width:100%;height:58%;
+  background:linear-gradient(135deg,#d86691,#9b3b63);
+  clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;
+  transition:transform .8s ease;z-index:4;border-radius:12px 12px 0 0;
+}
+.paper{
+  position:absolute;left:7%;top:8%;width:86%;height:88%;background:#fffaf4;color:#382331;
+  border-radius:8px;padding:28px;z-index:2;transition:transform .9s ease;box-shadow:0 10px 25px #0004;
+}
+.paper h3{font-family:"Great Vibes",cursive;font-size:34px;color:#a43866}
+.paper p{font-family:"Cormorant Garamond",serif;font-size:18px;line-height:1.55;margin-top:8px}
+.envelope.open .flap{transform:rotateX(180deg)}
+.envelope.open .paper{transform:translateY(-190px);z-index:5}
+.envelope-note{text-align:center;color:#aa9bad;font-size:12px;margin-top:20px}
+
+.letter-card{
+  background:linear-gradient(145deg,rgba(27,18,38,.95),rgba(14,9,20,.95));
+  border:1px solid rgba(255,180,211,.14);border-radius:26px;padding:clamp(28px,6vw,60px);
+  box-shadow:0 30px 90px #0005;position:relative;overflow:hidden;
+}
+.letter-card:before{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:#ff5fa01c;filter:blur(50px);right:-80px;top:-80px}
+.letter-text{font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.9;color:#f0e5ed}
+.letter-text p{margin-bottom:20px}
+.signature{font-family:"Great Vibes",cursive;font-size:42px;color:var(--rose);text-align:right;margin-top:25px}
+
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.photo{
+  height:320px;border-radius:18px;overflow:hidden;background:#1a1121;
+  border:1px solid rgba(255,255,255,.08);box-shadow:0 15px 35px #0005;
+}
+.photo:nth-child(2),.photo:nth-child(5){height:390px}
+.photo img{width:100%;height:100%;object-fit:cover;display:block;transition:.5s}
+.photo:hover img{transform:scale(1.05)}
+
+.reasons{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.reason{padding:27px;border-radius:20px;background:#151020;border:1px solid #ffffff0c}
+.reason .ico{font-size:32px;margin-bottom:13px}
+.reason h3{font-family:"Cormorant Garamond",serif;font-size:25px;color:#ffd0e3;margin-bottom:8px}
+.reason p{color:#bcaebd;line-height:1.65;font-size:14px}
+
+.final{
+  min-height:80vh;display:grid;place-items:center;text-align:center;padding:90px 20px;
+  background:radial-gradient(circle at 50% 50%,#481c3d 0,#170c20 45%,#090611 100%);
+}
+.final h2{font-family:"Great Vibes",cursive;font-weight:400;font-size:clamp(60px,11vw,110px);line-height:1;color:#fff}
+.final h2 span{color:var(--pink)}
+.final p{font-family:"Cormorant Garamond",serif;font-size:24px;color:#ddcedc;max-width:650px;margin:25px auto 30px;line-height:1.6}
+footer{text-align:center;padding:28px;color:#877887;background:#060409;font-size:11px;letter-spacing:1px}
+
+#musicBtn{position:fixed;right:18px;bottom:18px;z-index:20;width:48px;height:48px;border-radius:50%;border:1px solid #ffffff20;background:#1b1125;color:#fff;cursor:pointer;box-shadow:0 10px 30px #0006}
+#topBtn{position:fixed;right:18px;bottom:76px;z-index:20;width:40px;height:40px;border-radius:50%;border:1px solid #ffffff18;background:#1b1125;color:#fff;cursor:pointer;display:none}
+.hidden{display:none!important}
+
+@media(max-width:760px){
+  .gallery{grid-template-columns:1fr 1fr}
+  .photo,.photo:nth-child(2),.photo:nth-child(5){height:250px}
+  .reasons{grid-template-columns:1fr}
+  .hero p{font-size:20px}
+  .envelope{height:230px}
+  .paper{padding:18px}
+  .paper h3{font-size:27px}
+  .paper p{font-size:15px}
+  .envelope.open .paper{transform:translateY(-125px)}
+}
+@media(max-width:470px){
+  .gallery{grid-template-columns:1fr}
+  .photo,.photo:nth-child(2),.photo:nth-child(5){height:330px}
+}
+</style>
+</head>
+<body class="locked">
+
+<div id="stars"></div>
+<div class="hearts" id="hearts"></div>
+
+<!-- PASSWORD SCREEN -->
+<div id="lockScreen">
+  <div class="lock-card">
+    <div class="lock-icon">🔐</div>
+    <h1>A Little Surprise for <span class="script" style="color:#ff9fc5">Samer</span></h1>
+    <p class="hint">This little corner of the internet is just for you.<br>Enter the secret code to open your birthday letter.</p>
+    <input id="codeInput" type="password" inputmode="numeric" maxlength="4" placeholder="••••" aria-label="Secret code">
+    <button class="btn" id="unlockBtn">Unlock My Letter 💌</button>
+    <div class="error" id="error"></div>
+    <div class="hint-code">Hint: your birthday — month + day</div>
+  </div>
+</div>
+
+<main id="site" class="hidden">
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">A birthday surprise made especially for you</div>
+    <h1>Happy Birthday,<br><span>Samer.</span></h1>
+    <p>For <strong>Samer Stephanie Chiu Merindo Peralta</strong> — a little collection of words, memories, and all the reasons this day deserves to be celebrated.</p>
+    <a href="#envelope" class="btn">Begin Your Surprise ✨</a>
+    <br><br>
+    <a class="scroll" href="#envelope">scroll down <span>↓</span></a>
+  </div>
+</section>
+
+<section class="section" id="envelope">
+  <div class="wrap">
+    <h2 class="section-title">There is a letter <span class="script">for you...</span></h2>
+    <p class="section-sub">Tap the envelope. Take your time. This part was made just for your birthday.</p>
+    <div class="envelope-wrap">
+      <div>
+        <div class="envelope" id="envelopeBox" aria-label="Open birthday letter">
+          <div class="env-back"></div>
+          <div class="paper">
+            <h3>For my Samer,</h3>
+            <p>There are some things that are easier to write than to say...</p>
+            <p>So I made you a whole little world instead. ❤️</p>
+          </div>
+          <div class="flap"></div>
+          <div class="env-front"></div>
+        </div>
+        <div class="envelope-note">Tap the envelope to open it</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="section-title">My <span class="script">Letter</span> to You</h2>
+    <p class="section-sub">A few words for the birthday girl.</p>
+    <div class="letter-card">
+      <div class="letter-text">
+        <p>Dear Samer,</p>
+        <p>Happy birthday, my love. ❤️</p>
+        <p>Today is your day, and I wanted to give you something that you could keep — not just a greeting, but a little reminder of how special you are.</p>
+        <p>When I look at these photos, I don't just see pictures. I see little pieces of your story: your smiles, your expressions, your quiet moments, and all the different versions of you that make you uniquely you.</p>
+        <p>I hope this new year of your life brings you more reasons to smile, more dreams to chase, more moments that make your heart happy, and people who remind you how much you matter.</p>
+        <p>Thank you for being part of my life and for giving me memories that I can look back on with a smile. Whatever the future brings, I hope we continue making little moments worth remembering.</p>
+        <p>So today, please remember this: you deserve to be celebrated. Not only because it's your birthday, but simply because you are <em>you</em>.</p>
+        <p>Happy birthday, Samer. I hope this tiny website makes you smile as much as your pictures make me smile.</p>
+        <p>And yes... I made you enter a password just to read this. 😄💗</p>
+        <div class="signature">With all my heart,<br>Your Love ♡</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="section-title">A Gallery of <span class="script">You</span> 📸</h2>
+    <p class="section-sub">Twelve little snapshots of the birthday girl.</p>
+    <div class="gallery">
+      <div class="photo"><img src="photo1.jpg" alt="Samer memory 1"></div>
+      <div class="photo"><img src="photo2.jpg" alt="Samer memory 2"></div>
+      <div class="photo"><img src="photo3.jpg" alt="Samer memory 3"></div>
+      <div class="photo"><img src="photo4.jpg" alt="Samer memory 4"></div>
+      <div class="photo"><img src="photo5.jpg" alt="Samer memory 5"></div>
+      <div class="photo"><img src="photo6.jpg" alt="Samer memory 6"></div>
+      <div class="photo"><img src="photo7.jpg" alt="Samer memory 7"></div>
+      <div class="photo"><img src="photo8.jpg" alt="Samer memory 8"></div>
+      <div class="photo"><img src="photo9.jpg" alt="Samer memory 9"></div>
+      <div class="photo"><img src="photo10.jpg" alt="Samer memory 10"></div>
+      <div class="photo"><img src="photo11.jpg" alt="Samer memory 11"></div>
+      <div class="photo"><img src="photo12.jpg" alt="Samer memory 12"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="section-title">Why You Are <span class="script">Special</span></h2>
+    <p class="section-sub">Not a complete list. I could probably make this page much longer.</p>
+    <div class="reasons">
+      <div class="reason"><div class="ico">🌷</div><h3>Your Kindness</h3><p>The little things you do and the way you care about people say so much about your heart.</p></div>
+      <div class="reason"><div class="ico">✨</div><h3>Your Personality</h3><p>There is something uniquely you about you — and that's something worth appreciating.</p></div>
+      <div class="reason"><div class="ico">😊</div><h3>Your Smile</h3><p>A simple smile can turn an ordinary moment into something I want to remember.</p></div>
+      <div class="reason"><div class="ico">😂</div><h3>Your Laugh</h3><p>Some of the best memories are simply the moments when we laugh and forget about everything else.</p></div>
+      <div class="reason"><div class="ico">💫</div><h3>Your Strength</h3><p>I hope you always recognize how capable you are, even on the days when you don't feel it.</p></div>
+      <div class="reason"><div class="ico">💗</div><h3>Simply You</h3><p>Most importantly, you don't have to be anything other than yourself to be worth celebrating.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div>
+    <div class="eyebrow">One last thing...</div>
+    <h2>Happy Birthday,<br><span>Samer. 💗</span></h2>
+    <p>May this next chapter be gentle with you, exciting for you, and filled with beautiful moments you never expected.</p>
+    <button class="btn" id="wishBtn">Make a Birthday Wish ✨</button>
+  </div>
+</section>
+
+<footer>Made with love, memories, and a little bit of code. ♡</footer>
+</main>
+
+<button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<button id="musicBtn" title="Music">♫</button>
+<audio id="music" loop></audio>
+
+<script>
+const SECRET_CODE = "1031";
+
+const lock = document.getElementById("lockScreen");
+const site = document.getElementById("site");
+const input = document.getElementById("codeInput");
+const error = document.getElementById("error");
+
+function unlock(){
+  if(input.value === SECRET_CODE){
+    lock.classList.add("hidden");
+    site.classList.remove("hidden");
+    document.body.classList.remove("locked");
+    burst();
+    localStorage.setItem("samerBirthdayUnlocked","yes");
+  } else {
+    error.textContent = "That code isn't quite right. Try again 💗";
+    input.value = "";
+    input.focus();
+  }
+}
+document.getElementById("unlockBtn").addEventListener("click",unlock);
+input.addEventListener("keydown",e=>{if(e.key==="Enter")unlock()});
+
+document.getElementById("envelopeBox").addEventListener("click",function(){
+  this.classList.toggle("open");
+  if(this.classList.contains("open")) burst();
+});
+
+function makeStars(){
+  const stars=document.getElementById("stars");
+  for(let i=0;i<100;i++){
+    const s=document.createElement("i");
+    s.className="star";
+    s.style.left=Math.random()*100+"%";
+    s.style.top=Math.random()*100+"%";
+    s.style.animationDelay=Math.random()*3+"s";
+    stars.appendChild(s);
+  }
+}
+makeStars();
+
+function heart(){
+  const h=document.createElement("div");
+  h.className="heart";
+  h.textContent=["♡","♥","💗","💕","✦"][Math.floor(Math.random()*5)];
+  h.style.left=Math.random()*100+"%";
+  h.style.fontSize=(12+Math.random()*20)+"px";
+  h.style.animationDuration=(7+Math.random()*6)+"s";
+  document.getElementById("hearts").appendChild(h);
+  setTimeout(()=>h.remove(),14000);
+}
+setInterval(heart,900);
+
+function burst(){
+  for(let i=0;i<28;i++){
+    setTimeout(()=>{
+      const h=document.createElement("div");
+      h.className="heart";
+      h.textContent=["💗","💕","💖","✨"][Math.floor(Math.random()*4)];
+      h.style.left=(35+Math.random()*30)+"%";
+      h.style.bottom=(25+Math.random()*25)+"%";
+      h.style.animationDuration=(3+Math.random()*3)+"s";
+      document.getElementById("hearts").appendChild(h);
+      setTimeout(()=>h.remove(),7000);
+    },i*45);
+  }
+}
+
+document.getElementById("wishBtn").addEventListener("click",()=>{
+  burst();
+  alert("✨ Your wish has been sent to the universe. Happy Birthday, Samer! 💗");
+});
+
+window.addEventListener("scroll",()=>{
+  document.getElementById("topBtn").style.display=scrollY>600?"block":"none";
+});
+
+const musicBtn=document.getElementById("musicBtn");
+const music=document.getElementById("music");
+musicBtn.addEventListener("click",()=>{
+  if(music.src){
+    if(music.paused){music.play();musicBtn.textContent="🔊";}
+    else{music.pause();musicBtn.textContent="♫";}
+  }else{
+    alert("Add your own music file as music.mp3 in this folder, then refresh the page.");
+  }
+});
+</script>
+</body>
+</html>
